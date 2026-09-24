@@ -1,0 +1,49 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-image: url("background.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Keys & Key Container Styles */
+
+.container {
+  display: inline-flex;
+  /* background-color: blue; */
+  gap: 30px;
+}
+
+.key-box {
+  background-color: #000000aa;
+  width: 150px;
+  height: 150px;
+  border: solid black 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.key {
+  color: white;
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+
+.effect-box {
+  color: orange;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.active {
+  border: solid orange 5px;
+  box-shadow: 0px 0px 30px 10px orange;
+  transform: scale(1.2);
+  transition: ease-in-out;
+}

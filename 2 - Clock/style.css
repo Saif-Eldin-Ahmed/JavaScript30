@@ -1,0 +1,105 @@
+body {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.image {
+  background: conic-gradient(#00ffc8bb, #0037ffbb, #1f0289bb, #00ffc8bb);
+  position: fixed;
+  z-index: -2;
+  top: -600px;
+  left: -600px;
+  aspect-ratio: 1/1;
+  width: 150%;
+  border-radius: 50%;
+  animation: 8s linear infinite rotate;
+  overflow: hidden;
+}
+
+.de {
+  animation: 4s linear infinite rotate;
+}
+
+.re {
+  animation: 8s linear infinite reverse rotate;
+}
+
+.backdrop {
+  z-index: -1;
+  position: fixed;
+  top: -600px;
+  left: -600px;
+  aspect-ratio: 1/1;
+  width: 150%;
+  backdrop-filter: blur(100px);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Clock */
+
+.container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  position: relative;
+  border: white solid 20px;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+}
+
+.clock::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  width: 5px;
+  height: 130px;
+  transform-origin: center bottom;
+  transition: 0.05s all cubic-bezier(0, 0, 0.88, 1.33);
+}
+
+.hand.mins {
+  height: 100px;
+  width: 7px;
+}
+
+.hand.hours {
+  height: 70px;
+  width: 10px;
+}
